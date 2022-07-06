@@ -1,121 +1,24 @@
 import Header from './Header';
 import './home.css';
 import MealInfo from '../modals/MealInfo';
+import Headings from './home/Headings'
+import Meal from './home/Meal'
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div>
         <Header />
-        <section>
-          <h3>01/04/2022</h3>
-          <div className='innerSection'>
-            <button className='addBtn'>Add meal</button>
-            <div className='mealSection'>
-              <h4 className='mealName'>Khinkali</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
+          {props.mealDB.map(i=>(
+            <section key={i.row}>
+              <Headings rowDate={i.row} />
+              <div className='innerSection'>
+              <button className='addBtn'>Add meal</button>
+                {i.meals.map(j=>(
+                  <Meal key={j.id} name={j.name} />
+                ))}
               </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Olivie</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Salad</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h3>01/04/2022</h3>
-          <div className='innerSection'>
-            <button className='addBtn'>Add meal</button>
-            <div className='mealSection'>
-              <h4 className='mealName'>Khinkali</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Olivie</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Salad</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Salad</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Salad</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Salad</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Salad</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Salad</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Salad</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Salad</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-            <div className='mealSection'>
-              <h4 className='mealName'>Salad</h4>
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
-              </div>
-            </div>
-          </div>
-        </section>
+            </section>
+          ))}
         <MealInfo />
     </div>
   )

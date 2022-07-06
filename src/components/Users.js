@@ -1,30 +1,17 @@
 import Header from './Header';
-import pencil from '../pics/pencil.png';
+import Raw from './users/Rows';
 import './users.css'
 
-export default function Users() {
+export default function Users(props) {
+  console.log(props.usersDB, 'usersDB')
   return (
     <div>
         <Header />
         <div className='usersList'>
-          <div className='userRow' >
-            <img src='https://fr-academic.com/pictures/frwiki/74/Jim_Jarmusch.jpg' alt='profile' width='64px'/>
-            <h3 className='userName'>JimJaramush</h3>
-            <div>
-              <button className='userRowBtn'><img src={pencil} alt='pencil' width='10px'/></button>
-              <button className='userRowBtn'>X</button>
-            </div>
-          </div>
-
-          <div className='userRow' >
-            <img src='https://fr-academic.com/pictures/frwiki/74/Jim_Jarmusch.jpg' alt='profile' width='64px'/>
-            <h3 className='userName'>JimJaramush</h3>
-            <div>
-              <button className='userRowBtn'><img src={pencil} alt='pencil' width='10px'/></button>
-              <button className='userRowBtn'>X</button>
-            </div>
-          </div>
-            <button>Add new user</button>
+          {props.usersDB.map(i=>(
+            <Raw key={i.name} name={i.name} img={i.img} />
+          ))}
+          <button>Add new user</button>
         </div>
     </div>
   )

@@ -6,6 +6,10 @@
     justify-content: center;
 }
 
+.login > div > button:first-child {
+    margin-right: 9px;
+}
+
 .passLabel {
     margin: 14px 0 34px 0;
 }
