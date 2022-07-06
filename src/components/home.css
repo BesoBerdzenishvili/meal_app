@@ -1,0 +1,37 @@
+section {
+    padding: 14px 34px;
+}
+.innerSection {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.addBtn {
+    padding: 30px;
+    border-radius: 7px;
+    border: 2px solid rgb(120, 181, 255);
+    color: rgb(120, 181, 255);
+    cursor: pointer;
+    margin: 17px 11px 0 0;
+    background-color: #FFFFFF;
+}
+.addBtn:active {
+    position: relative;
+    top: 4px;
+    left: 4px;
+    color: black;
+    border: 2px solid rgb(0, 0, 0);
+}
+.mealSection {
+    text-align: center;
+    background-color: rgb(120, 181, 255);
+    border-radius: 7px;
+    padding: 7px;
+    margin: 17px 11px 0 0;
+}
+.mealSection > div > button:first-child {
+    margin-right: 6px;
+}
+.mealName {
+    margin-bottom: 19px;
+}
